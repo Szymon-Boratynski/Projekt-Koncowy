@@ -1,7 +1,7 @@
 #include "klient.h"
 
 Klient::Klient(string imie, string nazwisko,
-               string adres, Plec plec, unsigned int id) :
+               string adres, Plec plec, int id) :
                imie(imie), nazwisko(nazwisko), adres(adres),
                plec(plec), id(id)
 { }
@@ -29,8 +29,51 @@ void Klient::wyswietl_klienta()
          << ", ID: " << id << endl;
 }
 
-const string Klient::get_imie() const{
+string Klient::get_imie() const{
     return imie;
+}
+
+string Klient::get_nazwisko() const{
+    return nazwisko;
+}
+
+string Klient::get_adres() const{
+    return adres;
+}
+
+char Klient::get_plec() const{
+    char p = static_cast<char>(plec);
+    return p;
+}
+
+int Klient::get_ilosc_zamowien() const
+{
+    return zamowienia.size();
+}
+
+string Klient::get_produkt_nazwa(int i) const
+{
+    return zamowienia[i].get_produktNazwa();
+}
+
+int Klient::get_ilosc(int i) const
+{
+    return zamowienia[i].get_ilosc();
+}
+
+string Klient::get_data(int i) const
+{
+    return zamowienia[i].get_data();
+}
+
+int Klient::get_wartosc(int i) const
+{
+    return zamowienia[i].get_wartosc();
+}
+
+string Klient::get_sposob(int i) const
+{
+    return zamowienia[i].get_sposob();
 }
 
 void Klient::set_imie(string noweImie)

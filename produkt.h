@@ -8,17 +8,17 @@ class Produkt
 {
 private:
     string nazwa;
-    unsigned int stawka;
-    unsigned int cenaNetto;
-    unsigned int cenaBrutto;
+    int stawka;
+    int cenaNetto;
+    int cenaBrutto;
 
 public:
-    Produkt(string nazwa, unsigned int stawka,
-            unsigned int cenaNetto);
-    unsigned int get_cenaBrutto();
+    Produkt(string nazwa, int stawka,
+            int cenaNetto);
+    int get_cenaBrutto();
     void wyswietl_produkt();
     const string get_nazwa() const;
-    unsigned int get_stawka() const;
+    int get_stawka() const;
 };
 
 #endif // PRODUKT_H
