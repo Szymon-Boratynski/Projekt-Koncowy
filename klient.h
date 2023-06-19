@@ -15,16 +15,21 @@ private:
     string nazwisko;
     string adres;
     Plec plec;
-    int id;
-
+    unsigned int id;
+    std::vector<Zamowienie> zamowienia;
 
 public:
-    std::vector<Zamowienie> orders;
-    Klient(string Imie, string Nazwisko, string Adres, Plec Plec, int ID);
+
+    Klient(string imie, string nazwisko, string adres, Plec plec, unsigned int id);
     void dodaj_zamowienie(Zamowienie zamowienie);
     void edytuj_zamowienie(int i,Zamowienie zamowienie);
     void wyswietl_zamowienia();
-    string get_imie();
+    void wyswietl_klienta();
+    const string get_imie() const;
+    void set_imie(string noweImie);
+    void set_nazwisko(string noweNazwisko);
+    void set_adres(string nowyAdres);
+    void set_plec(Plec nowaPlec);
 };
 
 #endif // KLIENT_H

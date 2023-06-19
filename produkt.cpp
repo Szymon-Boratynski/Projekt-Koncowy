@@ -2,27 +2,27 @@
 
 Produkt::Produkt(string nazwa, unsigned int stawka,
                  unsigned int cenaNetto) :
-                nazwa(nazwa),
+                nazwa(nazwa), stawka(stawka),
                 cenaNetto(cenaNetto), cenaBrutto(cenaNetto*stawka)
 
-{ this->stawka = stawka; }
+{ }
 
 unsigned int Produkt::get_cenaBrutto()
 {
     return cenaBrutto;
 }
 
-void wyswietl_produkt(){
+void Produkt::wyswietl_produkt(){
     cout << "Nazwa: " << nazwa
          << ", Cena netto: " << cenaNetto
          << ", Cena brutto: " << cenaBrutto
          << ", Stawka: " << stawka << endl;
 }
 
-string get_nazwa(){
+const string Produkt::get_nazwa() const{
     return nazwa;
 }
 
-unsigned int get_stawka(){
+unsigned int Produkt::get_stawka() const{
     return stawka;
 }

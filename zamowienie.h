@@ -15,8 +15,9 @@ private:
     string sposob_platnosci;
 
 public:
-    Zamowienie(Produkt Produkt, unsigned int ilosc,
+    Zamowienie(Produkt produkt, unsigned int ilosc,
                string data, string sposob_platnosci);
+    void wyswietl_zamowienie() const;
 };
 
 #endif // ZAMOWIENIE_H

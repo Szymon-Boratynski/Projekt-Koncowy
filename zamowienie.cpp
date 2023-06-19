@@ -4,13 +4,13 @@ Zamowienie::Zamowienie(Produkt produkt, unsigned int ilosc,
                        string data, string sposob_platnosci) :
                        produkt(produkt), ilosc(ilosc), data(data),
                        sposob_platnosci(sposob_platnosci)
-{ }
+{ wartosc = ilosc * produkt.get_cenaBrutto() * produkt.get_stawka(); }
 
-void wyswietl_zamowienie(){
+void Zamowienie::wyswietl_zamowienie() const{
     cout << "Produkt: " << produkt.get_nazwa()
          << ", Ilosc: " << ilosc
-         << ", Stawka VAT: " << stawka
+         << ", Stawka VAT: " << produkt.get_stawka()
          << ", Wartosc: " << wartosc
          << ", Data: " << data
-         << "Metoda platnosci: " << metoda_platnosci << endl;
+         << ", Metoda platnosci: " << sposob_platnosci << endl;
 }

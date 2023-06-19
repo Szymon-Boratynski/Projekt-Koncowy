@@ -13,11 +13,12 @@ private:
     unsigned int cenaBrutto;
 
 public:
-    Produkt(string Nazwa, unsigned int Stawka,
-            unsigned int CenaNetto);
+    Produkt(string nazwa, unsigned int stawka,
+            unsigned int cenaNetto);
     unsigned int get_cenaBrutto();
     void wyswietl_produkt();
-    string get_nazwa();
+    const string get_nazwa() const;
+    unsigned int get_stawka() const;
 };
 
 #endif // PRODUKT_H
